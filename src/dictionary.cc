@@ -517,6 +517,9 @@ void Dictionary::addDict(Dictionary dict, bool resetToken) {
     ntokens_ += dict.ntokens();
   }
 
+  nwords_ = dict.nwords();
+  nlabels_ = dict.nlabels();
+  size_ = nwords_ + nlabels_;
   threshold(args_->minCount, args_->minCountLabel);
   initTableDiscard();
   initNgrams();
